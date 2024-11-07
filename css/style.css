@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.holder{
+    background-color: rgba(235,249,255,0.4);
+    max-width: 1110px;
+    margin: 0 auto;
+}
+.holder .nav{
+    display: flex;
+    
+    align-items: center;
+}
+.holder .nav img{
+    width: 30%;
+    height: auto;
+    margin-left: 3px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    
+    padding: 40px;
+    border-radius: 20px solid gray;
+}
+
+.write span{
+    outline: 2px solid red;
+}

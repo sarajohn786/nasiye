@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap");
+
+.container {
+    width: 1110px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #def8d6;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.container .close {
+    position: absolute;
+    right: 10%;
+    top: 19%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.content span {
+    font-family: "Sacramento", sans-serif;
+    font-weight: normal;
+    font-size: 3rem;
+    padding: 10px;
+    color: rgb(24, 9, 37);
+
+}
+
+/* #sign-in-google {
+    width: 200px;
+    border: 2px solid gray;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+    gap: 20px;
+    cursor: pointer;
+    padding: 10px;
+} */
+
+.outh {
+    margin-left: 38%;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 280px;
+    padding: 10px;
+    margin-bottom: 4rem;
+}
+
+.outh input {
+    width: 70%;
+    display: block;
+    margin: 7%;
+    border: 2px solid #6ab1d5;
+    border-radius: 10px;
+    padding: 7px;
+    
+
+}
+
+.outh button {
+    width: 76%;
+    margin-left: 7%;
+    border: 2px solid #6ab1d5;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: #6ab1d5;
+    cursor: pointer;
+
+}
+
+.outh span {
+    font-family: "Sacramento", sans-serif;
+    font-weight: normal;
+    font-size: 2rem;
+    padding: 8px;
+    color: rgb(24, 9, 37);
+}
+#switchForm {
+    text-decoration: none;
+    cursor: pointer;
+}
+#switchForm:hover{
+    text-decoration: underline;
+}
