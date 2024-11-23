@@ -1,31 +1,112 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap");
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.holder{
-    background-color: rgba(235,249,255,0.4);
-    max-width: 1110px;
-    margin: 0 auto;
-}
-.holder .nav{
+.holder .nav {
     display: flex;
-    
     align-items: center;
+    justify-content: space-between;
+    position: sticky;
 }
-.holder .nav img{
-    width: 30%;
+.holder .nav img {
+    width: 20%;
     height: auto;
     margin-left: 3px;
+    position: relative;
 }
-.search{
+.brands span {
+    font-family: "Sacramento", sans-serif;
+    font-size: 3rem;
+    color: rgb(35, 5, 61);
+    margin-left: 30%;
+}
+.search {
+    width: max-content;
     display: flex;
     align-items: center;
-    
-    padding: 40px;
-    border-radius: 20px solid gray;
+    border-radius: 28px;
+    background-color: rgba(146, 139, 139, 0.4);
+}
+.search input {
+    color: #2d2929;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 10px;
+}
+.search i {
+    margin-left: 20px;
+    font-size: small;
+}
+.search input::placeholder,
+.search i {
+    color: rgba(0, 0, 0, 0.25);
+}
+.acc{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    gap: 70px;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    color: rgb(35, 5, 61);
+}
+hr {
+    width: 100%;
+    border: 1px solid rgb(18, 18, 69);
+    font-family: sac;
 }
 
-.write span{
-    outline: 2px solid red;
+/* Styling the content*/
+
+.posts{
+    grid-column: 1 / span 5;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    margin-left: 10%;
+}
+.content{
+    margin: 2%;
+    padding: 10px;
+    
+}
+.content .info h2{
+    font-size: 2rem;
+    padding: 10px;
+}
+.content .info p {
+    font-size: 1rem;
+    color: gray;
+    padding: 5px;
+    padding-left: 10px;
+}
+.content-image img {
+    width: 30%;
+    height: auto;
+    margin: 5%;
+    margin-left: 0;
+    border-radius: 5px;
+}
+.posts .content .additional{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+#line{
+    width: 60%;
+    margin-left: 10%;
+    border: 0.6px solid rgba(209, 209, 232, 0.4);
+}
+
+
+.vl{
+    border-left: 62px solid red;
+    height: 600px;
+    /* margin-left: 70%; */
 }
