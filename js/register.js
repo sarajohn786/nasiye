@@ -1,14 +1,4 @@
 
-// cancel the page  or go back
-
-const cancel = document.getElementById('close')
-const sign = document.getElementById('sign-in-google')
-
-cancel.addEventListener('click', close)
-function close() {
-    window.location.href = "first.html"
-}
-
 // getting what i need from html document
 
 const outhTitle = document.getElementById('outh-title')
@@ -20,6 +10,7 @@ const signInBtn = document.getElementById('sign-in')
 const authSwitch = document.getElementById('authSwitch')
 const switchForm = document.getElementById('switchForm')
 const outhForm = document.querySelector('#outh-form')
+const userBtn = document.getElementById('online-user')
 
 // all functions
 function switchOuthForm() {
@@ -41,14 +32,7 @@ function switchOuthForm() {
         userName.style.display = "none"
         confirmPass.style.display = "none"
 
-        if (userName.value == '') {
-            alert('please inter username')
-            return;
-        }
-        if (confirmPass.value !== password.value) {
-            alert('password mismatch');
-            return;
-        }
+       
     }
     userName.value = ''
     email.value = ''
@@ -56,26 +40,7 @@ function switchOuthForm() {
     confirmPass.value = ''
 }
 
-
-
-
-
-//  all events
-//  swiching log un and registration 
-
-let signIn = true;
-document.body.addEventListener('click', function (e) {
-    if (e.target.id != 'switchForm') return;
-
-    switchOuthForm();
-
-})
-
-// storing Data to local storage
-
-outhForm.addEventListener('submit', (e) => {
-
-    e.preventDefault()
+function store(){
 
     const user = {
         userName: signIn ? undefined : userName.value,
@@ -92,15 +57,11 @@ outhForm.addEventListener('submit', (e) => {
 
         if (existingUser) {
 
-            const online = localStorage.setItem('onlineUser', JSON.stringify(existingUser))
-
-            = online;
-            console.log(online)
+            localStorage.setItem('onlineUser', JSON.stringify(existingUser))
             window.location.href = '../index.html'
 
-
         } else {
-            alert('Invalid Credentials');
+            alert('Emailka ama password ka iska hubi');
             return;
         }
 
@@ -110,11 +71,11 @@ outhForm.addEventListener('submit', (e) => {
     // if i am in registration side
     else {
         if (userName.value == '') {
-            alert('please inter username')
+            alert('Username gasho')
             return;
         }
         if (confirmPass.value !== password.value) {
-            alert('password mismatch');
+            alert('passwords kaaga isku fiiri');
             return;
         }
         const users = JSON.parse(localStorage.getItem('users')) || []
@@ -123,7 +84,7 @@ outhForm.addEventListener('submit', (e) => {
         const existingUser = users.find((user) => user.userName === userName.value && user.email === email.value);
 
         if (existingUser) {
-            alert(`the user ${existingUser.userName} has already registered`)
+            alert(`${existingUser.userName} Waa lagaa horqaatay`)
             return;
         }
 
@@ -131,10 +92,43 @@ outhForm.addEventListener('submit', (e) => {
         users.push(user)
 
         localStorage.setItem('users', JSON.stringify(users));
-        alert('User Registered Succesfully');
+        alert('Si wanaagsan baad isku diiwaangalisay');
         switchOuthForm();
     }
+
+}
+
+
+
+//  all events
+//  swiching log in and registration 
+
+let signIn = true;
+document.body.addEventListener('click', function (e) {
+    if (e.target.id != 'switchForm') return;
+
+    switchOuthForm();
+
+})
+// storing Data to local storage
+outhForm.addEventListener('submit', (e) => {
+
+    e.preventDefault()
+   
+    store();
 
 
 })
 
+
+
+
+// cancel the page  or go back
+
+const cancel = document.getElementById('close')
+const sign = document.getElementById('sign-in-google')
+
+cancel.addEventListener('click', close)
+function close() {
+    window.location.href = "first.html"
+}
