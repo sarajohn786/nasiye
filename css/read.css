@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+.container .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+}
+
+.holder .nav img {
+    width: 20%;
+    height: auto;
+    margin-left: 3px;
+    position: relative;
+}
+
+.brands span {
+    font-family: "Sacramento", sans-serif;
+    font-size: 3rem;
+    color: rgb(35, 5, 61);
+    margin-left: 30%;
+}
+
+.search {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    border-radius: 28px;
+    background-color: rgba(146, 139, 139, 0.4);
+}
+
+.search input {
+    color: #2d2929;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.search i {
+    margin-left: 20px;
+    font-size: small;
+}
+
+.search input::placeholder,
+.search i {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.acc {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    gap: 70px;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    color: rgb(35, 5, 61);
+}
+
+hr {
+    width: 100%;
+    border: 1px solid rgb(18, 18, 69);
+    font-family: sac;
+}
+
+/* styling the article */
+.article {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    /* padding: c; */
+}
+
+.article h1 {
+    font-weight: bolder;
+    font-size: 2rem;
+    padding: 30px;
+    align-items: center;
+}
+
+
+textarea {
+    width: 900px;
+    height: 100vh;
+    border: none;
+    font-size: 1rem;
+    color: rgb(50, 51, 60);
+    resize: none;
+    outline: none;
+    line-height: 32px;
+
+}
+
+textarea::-webkit-scrollbar {
+    width: 0;
+}
+.reactions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+    width: 100px;
+    margin: auto;
+}
+.reactions .additional {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0px;
+}
+
+@media (max-width: 376px) {
+    .container {
+        max-width: 100%;
+        height: 100%;
+    }
+    .container nav{
+        width: 100%;
+    }
+
+}
