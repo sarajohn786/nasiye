@@ -29,7 +29,7 @@ function write() {
 }
 
 
-// story.innerHTML = ` `
+
 form.addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -53,3 +53,33 @@ function getlocalData() {
     return localDate
     
 }
+
+
+
+// Adding rich text editor related js
+// let toolbaroptions = [
+//     ["bold", "italic", "underline", "strike"],
+//     [ {header:[1,2,3,4,5,6,false]}],
+//     [{list:"ordered",list:"bullet"}],
+//     [{script:"sub"},{script:"super"}],
+//     [{indent:"+1"},{indent:"-1"}],
+//     [{size:["small","large","huge", false]}],
+//     [{align:[]}],
+//     ["image","link","video","formula"],
+//     [{color:[]},{background:[]}],
+//     [{font:[]}],
+//     ["code-block", "blockquote"]
+
+// ]
+
+// let quill = new Quill('#editor', {
+//     modules: {
+//         toolbar: toolbaroptions,
+//     },
+//     theme: 'snow'
+// });
+
+
+
+
+// :: dhbic kusoo bandhig toolpar ka oo qurxi i.a

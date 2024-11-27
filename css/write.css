@@ -62,14 +62,19 @@ textarea {
     width: 75%;
     height: 100vh;
     border: none;
-    font-size: 2rem;
+    font-size: 1rem;
     color: rgb(50, 51, 60);
     resize: none;
     outline: none;
-
+    line-height: 40px;
 }
 textarea::-webkit-scrollbar{
     width: 0;
+}
+
+::placeholder{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 #publish{
@@ -79,4 +84,41 @@ textarea::-webkit-scrollbar{
     position: absolute;
     top: 20px;
     right: 28%;
+}
+
+
+/* styling rich text editor */
+.rich-text{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 600px;
+    box-shadow:  0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+.rich-text button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    color: #777;
+    cursor: pointer;
+    margin: 5px 5px;
+}
+.rich-text button:hover{
+    color: #333;
+}
+.rich-text select {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 1em;
+    /* color: #333; */
+    cursor: pointer;
+    margin: 0 5px;
+}
+#editor{
+    /* outline: none; */
+    border: none;
 }

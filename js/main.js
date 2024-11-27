@@ -4,8 +4,9 @@ const userAcount = document.querySelector('#online-user')
 const postData = document.getElementById('post')
 const title = document.getElementById('title')
 const desc = document.getElementById('desc')
-const adding = document.getElementById('holder')
+const adding = document.getElementById('classic')
 const conent = document.getElementById('content')
+
 
 
 
@@ -26,14 +27,17 @@ function userData() {
 
 // posts reading 
 
+
+
 function addTaskToDom() {
 
     const writtens = getlocalData()
-    // console.log(writtens)
+    console.log(writtens)
+
 
     // adding.innerHTML = ''
     for (let write of writtens) {
-        console.log(write.xog)
+        // console.log(write.xog)
         const div = document.createElement('div')
         // div.className = 'posts'
         // div.className = 'content'
@@ -68,16 +72,36 @@ function addTaskToDom() {
         <hr id="line">
         `
         adding.appendChild(div)
-        console.log(adding)
 
+        // getting the id to navigate another page
+        function showMe() {
+            const stroies = getlocalData()
+            console.log(stroies)
+
+            const findIndex = stroies.find((info) => info.id == div.dataset.id)
+            // console.log(info.id)
+            console.log(findIndex)
+
+            if (findIndex) {
+
+                // console.log(info.id)
+                // localStorage.setItem('articleId',)
+                window.location.href = `./html/read.html?id=${findIndex.id}`
+
+            }
+        }
+        div.addEventListener('click', () => {
+            showMe()
+            // const r = div.dataset.id
+            // console.log(r)
+            // if (e.target.id == div.dataset.id){
+            //     window.location.href = './html/read.html'
+            // }
+            //  
+            // window.location.href = './html/read.html'
+        })
 
     }
-
-
-    // writtens.forEach(info => {
-
-
-    // });
 
 
 }
@@ -93,13 +117,6 @@ userAcount.addEventListener('click', function () {
 
 
 
-// local storage
-// addToLocal = (post) => {
-//     const posts = getDataFromLocal();
-//     posts.push(post)
-//     localStorage.setItem('posts', JSON.stringify(posts));
-
-// }
 
 getlocalData = () => {
     const localDate = JSON.parse(localStorage.getItem('info')) || [];
