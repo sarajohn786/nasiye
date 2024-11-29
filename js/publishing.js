@@ -5,13 +5,13 @@ const form = document.getElementById('form')
 const searchInput = document.getElementById('search-input')
 const photos = document.getElementById('search-results')
 
-// let keyWord = " "
+let keyWord = ""
 let page = 1;
 const query = 'office'
 keyWord = searchInput.value
-async function fetchImages(){
+async function fetchImages(query){
 
-    const url = `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=${accessKey}&per_page= 12`
+    const url = `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=${accessKey}&per_page=12`
     try {
         const response = await fetch(url)
         if (!response.ok) {
@@ -23,8 +23,9 @@ async function fetchImages(){
         if(!Array.isArray(results)){
             throw new error('not expected')
         }
-        
+        photos.innerHTML = '';
         results.map(photo => {
+
             const image = document.createElement("img")
             
             image.src = photo.urls.small
@@ -50,7 +51,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault()
     page = 1;
 
-    fetchImages()
+    fetchImages(searchInput.value)
 
 })
 
