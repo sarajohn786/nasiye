@@ -4,10 +4,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* background-color: rgb(241, 251, 255); */
 }
 
 .container {
     width: 100%;
+    /* background-color: rgb(241, 251, 255); */
 }
 
 .container .nav {
@@ -29,6 +31,7 @@
     font-size: 3rem;
     color: rgb(35, 5, 61);
     margin-left: 30%;
+
 }
 
 .search {
@@ -39,6 +42,10 @@
     background-color: rgba(146, 139, 139, 0.4);
 }
 
+.search span {
+    background: transparent;
+}
+
 .search input {
     color: #2d2929;
     border: none;
@@ -46,16 +53,19 @@
     background: transparent;
     font-size: 1rem;
     padding: 10px;
+    background: transparent;
 }
 
 .search i {
     margin-left: 20px;
     font-size: small;
+    background: transparent;
 }
 
 .search input::placeholder,
 .search i {
     color: rgba(0, 0, 0, 0.25);
+
 }
 
 .acc {
@@ -68,7 +78,12 @@
     color: rgb(35, 5, 61);
 }
 
+.acc i {
+    color: rgb(35, 5, 61);
+}
+
 hr {
+    margin-top: 4px;
     width: 100%;
     border: 1px solid rgb(18, 18, 69);
     font-family: sac;
@@ -103,12 +118,15 @@ textarea {
     resize: none;
     outline: none;
     line-height: 32px;
+    background-color: rgb(241, 251, 255);
+    color: rgb(0, 0, 0);
 
 }
 
 textarea::-webkit-scrollbar {
     width: 0;
 }
+
 .reactions {
     display: flex;
     align-items: center;
@@ -116,25 +134,101 @@ textarea::-webkit-scrollbar {
     flex-direction: column;
     gap: 10px;
     padding: 5px;
-    width: 100px;
+    width: 70%;
     margin: auto;
 }
+
 .reactions .additional {
     width: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-around;
+    gap: 50px;
     padding: 0px;
+    cursor: pointer;
 }
+
+.reactions .additional i {
+    color: rgb(35, 5, 61);
+}
+
+.like {
+    width: 100%;
+    display: flex;
+}
+
+.like i,
+span {
+    padding: 3px;
+    color: rgb(35, 5, 61);
+}
+
+.comment {
+    width: 100%;
+    display: flex;
+}
+
+.comment i,
+span {
+    padding: 3px;
+}
+
 
 @media (max-width: 376px) {
     .container {
-        max-width: 100%;
-        height: 100%;
-    }
-    .container nav{
         width: 100%;
+        /* background-color: rgb(241, 251, 255); */
+    }
+
+    .container nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brands span {
+        font-family: "Sacramento", sans-serif;
+        font-size: 2rem;
+        padding: 20px;
+        margin-left: 0;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .article {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        /* padding: c; */
+    }
+
+    .article h1 {
+        
+        font-size: 1.5rem;
+        /* padding: 20px; */
+        align-items: center;
+    }
+
+
+    textarea {
+        width: 900px;
+        height: 100vh;
+        border: none;
+        font-size: 1rem;
+        color: rgb(50, 51, 60);
+        resize: none;
+        outline: none;
+        line-height: 32px;
+        background-color: rgb(241, 251, 255);
+        color: rgb(0, 0, 0);
+
     }
 
 }

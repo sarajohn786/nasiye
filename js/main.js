@@ -6,9 +6,7 @@ const title = document.getElementById('title')
 const desc = document.getElementById('desc')
 const adding = document.getElementById('classic')
 const conent = document.getElementById('content')
-
-
-
+const user = document.getElementById('user-name')
 
 // all methods
 // all about writing and going the page that allows users to write everything they want
@@ -17,26 +15,44 @@ function goPage() {
     window.location.href = "./html/write.html"
 }
 write.addEventListener('click', goPage)
-
+let writtens = getlocalData() || []
 // online user account information
 function userData() {
     const userData = JSON.parse(localStorage.getItem('onlineUser'))
     const userName = userData.userName
+    
+    user.textContent = userName
+    // user.classList.add('user-information')
     console.log(userName)
+    toggleMenu()
 }
+let subMenu = document.getElementById('subMenu')
+function toggleMenu(){
+    subMenu.classList.toggle("open-menu");
+
+}
+
 
 // posts reading 
 
+search.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase()
+    console.log(value)
+    const filteredData = writtens.filter(written => {
+        return written.title.toLowerCase().includes(value) || written.desc.toLowerCase().includes(value)
+        
+    })
+    addTaskToDom(filteredData)
+})
+
+function addTaskToDom(filteredData) {
+    // console.log('filtered data;', filteredData)
+    let Writtens = filteredData || writtens
+    console.log(Writtens)
 
 
-function addTaskToDom() {
-
-    const writtens = getlocalData()
-    console.log(writtens)
-
-
-    // adding.innerHTML = ''
-    for (let write of writtens) {
+    adding.innerHTML = ''
+    for (let write of Writtens) {
         // console.log(write.xog)
         const div = document.createElement('div')
         // div.className = 'posts'
@@ -55,7 +71,7 @@ function addTaskToDom() {
                 <div class="additional">
                     <span id="date"></span>
                     <div class="like">
-                        &#x1F44F
+                        <i class="bi bi-hand-thumbs-up-fill" style="color:blue"></i>
                         <span id="count">456</span>
                     </div>
                     <div class="comment">
@@ -101,7 +117,9 @@ function addTaskToDom() {
             // window.location.href = './html/read.html'
         })
 
+
     }
+
 
 
 }
@@ -109,20 +127,43 @@ function addTaskToDom() {
 
 // all events
 
+// search.addEventListener('input', (e) => {
+//     const value = e.target.value
+//     console.log(value)
+// })
 
+
+// online user and user dropdown
 userAcount.addEventListener('click', function () {
     userData()
+    toggleMenu()
 
 })
 
 
 
 
-getlocalData = () => {
+function getlocalData() {
     const localDate = JSON.parse(localStorage.getItem('info')) || [];
     return localDate;
     // console.log(localDate)
 }
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault
     addTaskToDom()
 })
+
+
+
+function signOut(){
+    const localDate = JSON.parse(localStorage.getItem('onlineUser')) || [];
+    // localStorage.removeItem("onlineUser")
+    console.log(localDate)
+}
+// function getOnlineUser(){
+//     const localDate = JSON.parse(localStorage.getItem('onlineUser')) || [];
+//     // console.log(localDate)
+//     return localDate
+
+// }
+// // getOnlineUser()

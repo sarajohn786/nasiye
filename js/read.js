@@ -1,5 +1,7 @@
 const article = document.getElementById('article')
-const container = document.getElementsByClassName('container')
+const like = document.getElementById('like')
+const likeCounter = document.getElementById('count')
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
@@ -16,35 +18,9 @@ function stories(id) {
 
 
 AddTaskToDom = () => {
-    // const stroies = getLocalDate()
-    // console.log(stroies)
 
+    // displaying article to the dom by using the id of the article was clicked
     const story = stories(id)
-    // function showMe(){
-
-    // }
-
-    // for (let story of stroies){
-    //     // console.log(story)
-    //     const hold = document.createElement('article')
-    //     hold.className = 'article'
-    //     hold.dataset.id = stroies[0].id
-    //     hold.innerHTML = `<h1></h1>
-    //         <p></p>
-
-    //         <textarea></textarea>
-
-    //     `
-    //     // for (const key in story) {
-    //     //     console.log(story[key])
-    //     // }
-    // }
-
-
-
-    // const hold = document.createElement('div')
-    // hold.dataset.id = stroies[0].id
-
     const div = document.createElement('div')
     div.dataset.id = story.id
     div.innerHTML = `
@@ -60,33 +36,28 @@ AddTaskToDom = () => {
         `
     console.log(div)
     article.appendChild(div)
-
-    // stroies.forEach(story => {
-
-
-
-    // })
-    // for (let story of stroies) {
-    //     // console.log(story.id)
-    //     const div = document.createElement('div')
-    //     div.dataset.id = story.id
-    //     div.innerHTML = `
-    //         <div class="article" id="article">
-    //             <h1>${story.title}</h1>
-    //             <p>${story.desc}</p>
-    //             <div class="user">
-    //                 <i class="bi bi-person-circle" id="online-user" itemid="profile"></i>
-    //             </div>
-    //             <p>${story.xog}</p>
-
-    //         </div>
-    //     `
-    //     console.log(div)
-    //     article.appendChild(div)
-
-
-    // }
 }
+
+
+// liking the article
+
+let count = 0
+like.addEventListener('click', function(){
+    count++;
+    likeCounter.textContent = count
+    
+})
+
+function likes(){
+    let count = 0
+
+}
+
+
+
+
+
+
 
 
 

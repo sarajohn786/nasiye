@@ -4,25 +4,31 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: rgb(241, 251, 255);
 }
+
 .holder .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
 }
+
 .holder .nav img {
     width: 20%;
     height: auto;
     margin-left: 3px;
     position: relative;
 }
+
 .brands span {
     font-family: "Sacramento", sans-serif;
     font-size: 3rem;
     color: rgb(35, 5, 61);
     margin-left: 30%;
+
 }
+
 .search {
     width: max-content;
     display: flex;
@@ -30,6 +36,7 @@
     border-radius: 28px;
     background-color: rgba(146, 139, 139, 0.4);
 }
+
 .search input {
     color: #2d2929;
     border: none;
@@ -38,15 +45,23 @@
     font-size: 1rem;
     padding: 10px;
 }
+
+.search span {
+    background: transparent;
+}
+
 .search i {
     margin-left: 20px;
     font-size: small;
+    background: transparent;
 }
+
 .search input::placeholder,
 .search i {
     color: rgba(0, 0, 0, 0.25);
 }
-.acc{
+
+.acc {
     width: 200px;
     display: flex;
     justify-content: space-around;
@@ -55,6 +70,80 @@
     font-size: 1.3rem;
     color: rgb(35, 5, 61);
 }
+
+.sub-menu-wrap {
+    width: 320px;
+    position: absolute;
+    top: 80%;
+    right: 0%;
+    color: black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background-color: rgb(251, 251, 252);
+    padding: 20px;
+    margin: 10px;
+    color: black;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.user-information {
+    display: flex;
+    align-items: center;
+}
+
+.user-information #user-name {
+
+    padding: 10px;
+
+}
+
+.sub-menu hr {
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 17px 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    color: rgb(18, 18, 69);
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.sub-menu-link p {
+    width: 100%;
+}
+
+.sub-menu-link i {
+    padding: 10px;
+    color: rgba(18, 18, 69, 1);
+}
+
+.sub-menu-link span {
+    font-size: 15px;
+    /* font-weight: 900; */
+    transition: transform 0.5s;
+}
+
+.sub-menu-link span:hover {
+    transform: translateX(58px);
+}
+
+.sub-menu-link p:hover {
+    font-weight: 600px;
+}
+
 hr {
     width: 100%;
     border: 1px solid rgb(18, 18, 69);
@@ -63,27 +152,33 @@ hr {
 
 /* Styling the content*/
 
-.posts{
+.posts {
     grid-column: 1 / span 5;
     display: grid;
     grid-template-columns: repeat(2, 3fr);
     margin-left: 10%;
+    align-items: center;
 }
-.content{
-    margin: 2%;
+
+.content {
+    margin: 1%;
     padding: 10px;
-    
+    padding-left: 0;
+
 }
-.content .info h2{
+
+.content .info h2 {
     font-size: 2rem;
     padding: 10px;
 }
+
 .content .info p {
     font-size: 1rem;
     color: gray;
     padding: 5px;
     padding-left: 10px;
 }
+
 .content-image img {
     width: 30%;
     height: auto;
@@ -91,22 +186,213 @@ hr {
     margin-left: 0;
     border-radius: 5px;
 }
-.posts .content .additional{
+
+.posts .content .additional {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 5px;
 }
 
-#line{
+#line {
     width: 60%;
     margin-left: 10%;
     border: 0.6px solid rgba(209, 209, 232, 0.4);
 }
 
 
-.vl{
+.vl {
     border-left: 62px solid red;
     height: 600px;
     /* margin-left: 70%; */
+}
+
+/* ls */
+@media (min-width: 2000px) {
+    .holder {
+        width: 100%;
+        height: 100%;
+    }
+
+    .holder .nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+    }
+
+    .brands span {
+        font-size: 30px
+    }
+
+
+    .posts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        margin: 0;
+        align-items: center;
+    }
+
+    .content {
+        grid-column: 1 / span 2;
+        padding: 10px;
+
+        align-items: center;
+
+    }
+
+    .content .info h2 {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    .content .info p {
+        font-size: 2rem;
+        color: gray;
+        padding: 10px;
+        padding-left: 10px;
+    }
+
+    .content-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    #line {
+        width: 100%;
+        margin: 0;
+        border: 0.6px solid rgba(209, 209, 232, 0.4);
+    }
+}
+
+/* tp */
+@media (max-width: 768px) {
+    .holder {
+        width: 100%;
+        height: 100%;
+    }
+
+    .holder .nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+    }
+
+    .brands span {
+        font-size: 30px
+    }
+
+
+    .posts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        margin: 0;
+        align-items: center;
+    }
+
+    .content {
+        grid-column: 1 / span 2;
+        padding: 10px;
+
+        align-items: center;
+
+    }
+
+    .content .info h2 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .content .info p {
+        font-size: 1rem;
+        color: gray;
+        padding: 5px;
+        padding-left: 10px;
+    }
+
+    .content-image img {
+        width: 90%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    #line {
+        width: 100%;
+        margin: 0;
+        border: 0.6px solid rgba(209, 209, 232, 0.4);
+    }
+}
+
+
+/* mp */
+@media (max-width: 376px) {
+    .holder {
+        width: 100%;
+        height: 100%;
+    }
+
+    .holder .nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+    }
+
+    .brands span {
+        font-size: 30px
+    }
+
+    .search {
+        display: none;
+    }
+
+    .posts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        margin: 0;
+        align-items: center;
+    }
+
+    .content {
+        grid-column: 1 / span 2;
+        padding: 10px;
+
+
+    }
+
+    .content .info h2 {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .content .info p {
+        font-size: 1rem;
+        color: gray;
+        padding: 5px;
+        padding-left: 10px;
+    }
+
+    .content-image img {
+        width: 90%;
+        height: auto;
+        margin-top: 0;
+        border-radius: 5px;
+    }
+
+    #line {
+        width: 100%;
+        margin: 0;
+        border: 0.6px solid rgba(209, 209, 232, 0.4);
+    }
 }
