@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(241, 251, 255);
+}
+
+.container .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+}
+
+.brands span {
+    font-family: "Sacramento", sans-serif;
+    font-size: 3rem;
+    color: rgb(35, 5, 61);
+    margin-left: 30%;
+
+}
+
+.search {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    border-radius: 28px;
+    background-color: rgba(146, 139, 139, 0.4);
+}
+
+.search input {
+    color: #2d2929;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.search span {
+    background: transparent;
+}
+
+.search i {
+    margin-left: 20px;
+    font-size: small;
+    background: transparent;
+}
+
+.search input::placeholder,
+.search i {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.acc {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    gap: 70px;
+    margin-right: 30px;
+    font-size: 1.3rem;
+    color: rgb(35, 5, 61);
+}
+
+.sub-menu-wrap {
+    width: 320px;
+    position: absolute;
+    top: 80%;
+    right: 0%;
+    color: black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background-color: rgb(251, 251, 252);
+    padding: 20px;
+    margin: 10px;
+    color: black;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.user-information {
+    display: flex;
+    align-items: center;
+}
+
+.user-information #user-name {
+
+    padding: 10px;
+
+}
+
+.sub-menu hr {
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 17px 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    color: rgb(18, 18, 69);
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.sub-menu-link p {
+    width: 100%;
+}
+
+.sub-menu-link i {
+    padding: 10px;
+    color: rgba(18, 18, 69, 1);
+}
+
+.sub-menu-link span {
+    font-size: 15px;
+    /* font-weight: 900; */
+    transition: transform 0.5s;
+}
+
+.sub-menu-link span:hover {
+    transform: translateX(58px);
+}
+
+.sub-menu-link p:hover {
+    font-weight: 600px;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid rgb(18, 18, 69);
+    font-family: sac;
+}

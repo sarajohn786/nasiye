@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+
     <link rel="stylesheet" href="../css/write.css">
-    <title>Writing</title>
+    <title>Nasiye</title>
 </head>
 
 <body>
@@ -15,18 +21,21 @@
                 <!-- <img src="./src/logo.png" alt=""> -->
                 <span id="brand">Nasiye</span>
             </div>
-            
+
             <div class="user">
-               
+
                 <i class="bi bi-person-circle" id="online-user" itemid="profile"></i>
             </div>
         </div>
 
+        <!-- <div id="editor">
+
+        </div> -->
         <article class="story" id="story">
             <form id="form">
-                <input name="title" id="title" placeholder="Ciwaanka">
-                <input id="desc" style="display: block;"></input>
-                <textarea name="" id="text-area" autofocus></textarea>
+                <input name="title" id="title" placeholder="Ciwaanka aad ka hadlaysid">
+                <input id="desc" style="display: block;" placeholder="Halqabsi" ></input>
+                <textarea contenteditable="true" id="text-area" autofocus placeholder="ku qor xogtaada"></textarea>
                 <button type="submit" id="publish">Publish</button>
                 <div class="add">
                     <i class="bi bi-plus-circle"></i>
@@ -34,8 +43,8 @@
             </form>
         </article>
 
-    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
     <script src="../js/write.js"></script>
 </body>
 
