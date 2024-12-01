@@ -2,24 +2,50 @@ const story = document.getElementById('story')
 const form = document.querySelector('form')
 const ptitle = document.getElementById('title')
 const pdesc = document.getElementById('desc')
-const pxogo = document.getElementById('text-area') 
+const pxogo = document.getElementById('text-area')
 const publish = document.getElementById('publish')
 const contentImage = document.getElementById('content-image')
+const acountUser = document.getElementById('online-user')
+const user = document.getElementById('user-name')
 
 
+function userData() {
+    const userData = JSON.parse(localStorage.getItem('onlineUser'))
+    const userName = userData.userName
+
+
+    user.textContent = userName
+    // user.classList.add('user-information')
+    console.log(userName)
+    // toggleMenu()
+}
+let subMenu = document.getElementById('subMenu')
+function toggleMenu() {
+    subMenu.classList.toggle("open-menu");
+
+}
+acountUser.addEventListener('click', function () {
+    userData()
+    toggleMenu()
+
+})
 
 function write() {
+    const userData = JSON.parse(localStorage.getItem('onlineUser'))
+    const userName = userData.userName
+    const userEmail = userData.email
     let info = {
-        id: Date.now(), 
+        id: Date.now(),
         title: ptitle.value,
         desc: pdesc.value,
         xog: pxogo.value,
-        // outhor:onlineUser.username
-        // photo: contentImage.getAttribute(src)
+        outhor: userName,
+        email: userEmail,
+        // photo: contentImage.src
     }
-    // console.log(info)
+    console.log(info.outhor)
 
-    
+
     const article = getlocalData()
     article.push(info)
     localStorage.setItem('info', JSON.stringify(article))
@@ -30,7 +56,7 @@ function write() {
 
 
 
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // write()
@@ -51,7 +77,7 @@ publish.addEventListener('click', function () {
 function getlocalData() {
     const localDate = JSON.parse(localStorage.getItem('info')) || []
     return localDate
-    
+
 }
 
 
