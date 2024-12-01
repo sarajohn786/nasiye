@@ -50,7 +50,9 @@ function addTaskToDom(filteredData) {
     let Writtens = filteredData || writtens
     console.log(Writtens)
 
-    getImageLink()
+    const photoLnk =  getImageLink()
+    console.log(photoLnk)
+    
     adding.innerHTML = ''
     for (let write of Writtens) {
         // console.log(write.xog)
@@ -88,7 +90,9 @@ function addTaskToDom(filteredData) {
         <hr id="line">
         `
         adding.appendChild(div)
-
+        
+        document.body.querySelector = ('src', photoLnk)
+        
         // getting the id to navigate another page
         function showMe() {
             const stroies = getlocalData()
@@ -154,8 +158,8 @@ function getlocalData() {
 
 function getImageLink() {
     const imageLinkData = JSON.parse(localStorage.getItem('links'))
-    // return imageLinkData
-    console.log(imageLinkData)
+    return imageLinkData
+    // console.log(imageLinkData)
 
 }
 

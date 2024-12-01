@@ -2,7 +2,7 @@ const story = document.getElementById('story')
 const form = document.querySelector('form')
 const ptitle = document.getElementById('title')
 const pdesc = document.getElementById('desc')
-const pxogo = document.getElementById('text-area') 
+const pxogo = document.getElementById('text-area')
 const publish = document.getElementById('publish')
 const contentImage = document.getElementById('content-image')
 const acountUser = document.getElementById('online-user')
@@ -33,17 +33,19 @@ acountUser.addEventListener('click', function () {
 function write() {
     const userData = JSON.parse(localStorage.getItem('onlineUser'))
     const userName = userData.userName
+    const userEmail = userData.email
     let info = {
-        id: Date.now(), 
+        id: Date.now(),
         title: ptitle.value,
         desc: pdesc.value,
         xog: pxogo.value,
-        outhor: userName
-        // photo: contentImage.getAttribute(src)
+        outhor: userName,
+        email: userEmail,
+        // photo: contentImage.src
     }
     console.log(info.outhor)
 
-    
+
     const article = getlocalData()
     article.push(info)
     localStorage.setItem('info', JSON.stringify(article))
@@ -54,7 +56,7 @@ function write() {
 
 
 
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // write()
@@ -75,7 +77,7 @@ publish.addEventListener('click', function () {
 function getlocalData() {
     const localDate = JSON.parse(localStorage.getItem('info')) || []
     return localDate
-    
+
 }
 
 

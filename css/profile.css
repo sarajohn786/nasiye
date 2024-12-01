@@ -132,7 +132,7 @@
     background-color: rgb(255, 253, 229);
 }
 
-.sub-menu-link span {
+.sub-menu-link span, #email {
     font-size: 15px;
     /* font-weight: 900; */
     transition: transform 0.5s;
@@ -149,5 +149,20 @@
 hr {
     width: 100%;
     border: 1px solid rgb(18, 18, 69);
-    font-family: sac;
+}
+
+.navigater{
+    display: flex;
+    background-color: rgb(241, 251, 255);
+    
+}
+.navigater a{
+    background-color: rgb(241, 251, 255);
+    text-decoration: none;
+    color: rgb(35, 5, 61);
+    padding: 10px 40px;
+    font-weight: 200;
+}
+.navigater a:hover{
+    font-weight: 900;
 }
