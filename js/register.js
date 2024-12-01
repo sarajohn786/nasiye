@@ -130,5 +130,5 @@ const sign = document.getElementById('sign-in-google')
 
 cancel.addEventListener('click', close)
 function close() {
-    window.location.href = "first.html"
+    window.location.href = "../index.html"
 }
