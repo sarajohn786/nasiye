@@ -58,7 +58,7 @@ function store(){
         if (existingUser) {
 
             localStorage.setItem('onlineUser', JSON.stringify(existingUser))
-            window.location.href = '../index.html'
+            window.location.href = '../html/first.html'
 
         } else {
             alert('Emailka ama password ka iska hubi');
